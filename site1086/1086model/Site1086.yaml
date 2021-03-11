@@ -1,0 +1,35 @@
+# template can either be specified as either the relative or absolute path to the inputs.
+template: '1086model/Site1086.in'
+database: '1086model/reducedDatabase.dbs'
+aqueous_database: '1086model/sulfateMethaneAqueous.dbs'
+# Timeout in seconds for any one input file.
+timeout: 120
+# conditions must match geochemical condition names in concentration dict
+conditions:
+    - 'Seawater'
+# Number of files in this run.
+number_of_files: 1
+
+# Number of nodes to use if running in parallel. ESC Titan has 440 total (14-01-21)
+nodes: 300
+
+# Options for setting parameters:
+#     linspace
+#     random_uniform
+#     constant
+#     custom
+
+concentrations:
+    Seawater:
+      SO4--:
+      - 'constant'
+      - 0.025
+      Ca++:
+      - 'constant'
+      - 0.0464
+      Formaldehyde:
+      - 'constant'
+      - 0.05
+      CO2(aq):
+      - 'constant'
+      - 0.05

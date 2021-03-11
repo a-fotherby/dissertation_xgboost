@@ -1,0 +1,24 @@
+# template can either be specified as either the relative or absolute path to the inputs.
+template: 'rifle_box/RifleBox.in'
+database: 'rifle_box/OldRifleDatabaseLiLi.dbs'
+aqueous_database: 'rifle_box/aqueousRifleColumn.dbs'
+catabolic_control: 'rifle_box/CatabolicPathways_RifleColumn.dbs'
+# Timeout in seconds for any one input file.
+timeout: 120
+# conditions must match geochemical condition names in concentration dict
+conditions:
+    - 'amendment'
+# Number of files in this run.
+number_of_files: 20
+
+# Options for setting parameters:
+#     linspace
+#     random_uniform
+#     constant
+#     custom
+
+concentrations:
+    amendment:
+      CO2(aq):
+      - 'linspace'
+      - [0, 10, 1]
